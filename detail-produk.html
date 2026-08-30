@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERTIQ.CO - Detail Produk</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="button-utama">
+        <h1>VERTIQ.CO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tentang.html">About</a></li>
+                <li><a href="katalog.html" class="active">Shop</a></li>
+                <li><a href="bantuan.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detail-page-container">
+        <div class="back-navigation">
+            <a href="katalog.html" class="btn-back">← Kembali ke Katalog</a>
+        </div>
+
+        <div class="detail-wrapper">
+            <div class="detail-media">
+                <img id="detail-img" src="../image/topi.jpg" alt="Produk" class="main-detail-img">
+            </div>
+
+            <div class="detail-info">
+                <span id="detail-kategori" class="kategori-badge">Apparel</span>
+                <h1 id="detail-nama" class="product-title">Nama Produk</h1>
+                <p id="detail-harga" class="product-price">Rp 0</p>
+                
+                <div class="detail-section">
+                    <h3>Deskripsi Produk</h3>
+                    <p id="detail-deskripsi">Deskripsi rinci mengenai produk ini.</p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Spesifikasi & Detail Bahan</h3>
+                    <ul id="detail-spesifikasi">
+                        <li>Bahan berkualitas tinggi dan sangat nyaman digunakan.</li>
+                    </ul>
+                </div>
+
+                <div class="detail-action-buttons">
+                    <a id="btn-wa" href="#" target="_blank" class="btn btn-primary btn-order">
+                        Pesan via WhatsApp
+                    </a>
+                    <a href="bantuan.html" class="btn btn-secondary btn-order">
+                        Tanya via Contact Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>VERTIQ.CO</h3>
+                <p>Ekspresi gaya & solusi kreatif digital terbaik Anda.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tentang.html">About Us</a></li>
+                    <li><a href="katalog.html">Shop Catalog</a></li>
+                    <li><a href="bantuan.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Email: vertiq.co@gmail.com</p>
+                <p>Instagram: @vertiq.co</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VERTIQ.CO. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const databaseProduk = {
+            "topi": {
+                nama: "Topi Premium VERTIQ",
+                harga: "Rp 100.000",
+                kategori: "Apparel",
+                gambar: "../image/topi.jpg",
+                deskripsi: "Topi kasual dengan desain minimalis modern. Cocok untuk melengkapi gaya street style Anda sehari-hari.",
+                spesifikasi: ["Bahan: Cotton Twill Premium", "Ukuran: Adjustable strap (S-XL)", "Bordir presisi high-density"]
+            },
+            "kupluk": {
+                nama: "Kupluk Winter Style",
+                harga: "Rp 80.000",
+                kategori: "Apparel",
+                gambar: "../image/kupluk.jpg",
+                deskripsi: "Kupluk rajut hangat dan elastis dengan fleksibilitas tinggi, memberikan kenyamanan maksimal di cuaca dingin.",
+                spesifikasi: ["Bahan: Fine Acrylic Knit", "Tipe Fit: Stretch / Flexible Size", "Warna tahan lama & halus"]
+            },
+            "baju-oversize": {
+                nama: "Baju Oversize (Oversized Tee)",
+                harga: "Rp 200.000",
+                kategori: "Apparel",
+                gambar: "../image/baju.jpeg",
+                deskripsi: "Kaos potongan oversized urban fit yang dirancang adem dan memberikan siluet bergaya modern.",
+                spesifikasi: ["Bahan: Cotton Bamboo 24s Premium", "Potongan: Boxy Oversized Fit", "Sablon Plastisol HD"]
+            },
+            "baju": {
+                nama: "Baju Daily Casual Tee",
+                harga: "Rp 140.000",
+                kategori: "Apparel",
+                gambar: "../image/baju.jpg",
+                deskripsi: "Kaos harian berkualitas tinggi yang lembut di kulit, menyerap keringat dengan sangat baik.",
+                spesifikasi: ["Bahan: 100% Cotton Combed 24s", "Jahitan rantai ganda rapi", "Standar distro premium"]
+            },
+            "kameja-motif": {
+                nama: "Kemeja Motif Printed Shirt",
+                harga: "Rp 350.000",
+                kategori: "Apparel",
+                gambar: "../image/kamejakk.jpg",
+                deskripsi: "Kemeja berlengan pendek dengan motif artistik eksklusif yang membuat tampilan makin standout.",
+                spesifikasi: ["Bahan: Katun Rayon Premium (Dingin & Jatuh)", "Kancing eksklusif", "Full Printed Design"]
+            },
+            "kameja": {
+                nama: "Kemeja Minimalis Casual",
+                harga: "Rp 350.000",
+                kategori: "Apparel",
+                gambar: "../image/kemeja.jpg",
+                deskripsi: "Kemeja polos kasual serbaguna yang cocok dipakai untuk acara santai maupun semi-formal.",
+                spesifikasi: ["Bahan: Katun Poplin Premium", "Regular Fit", "Saku bagian dada"]
+            },
+            "celana-cargo": {
+                nama: "Celana Cargo Casual",
+                harga: "Rp 475.000",
+                kategori: "Apparel",
+                gambar: "../image/celana.jpeg",
+                deskripsi: "Celana cargo banyak saku yang multifungsi dan tangguh untuk berbagai aktivitas luar ruangan.",
+                spesifikasi: ["Bahan: Katun Drill Heavyweight", "6 Saku fungsional", "Jahitan Bartack mengunci kerapian"]
+            },
+            "celana-jeans-pendek": {
+                nama: "Celana Jeans Pendek",
+                harga: "Rp 375.000",
+                kategori: "Apparel",
+                gambar: "../image/celanajeanspendek.jpg",
+                deskripsi: "Celana denim pendek bergaya santai dengan efek washing yang modis dan fleksibel.",
+                spesifikasi: ["Bahan: Premium Denim 12oz", "Sleting YKK Original", "Regular Short Cut"]
+            },
+            "celana-panjang": {
+                nama: "Celana Panjang Chino",
+                harga: "Rp 395.000",
+                kategori: "Apparel",
+                gambar: "../image/celanapcoklat.jpg",
+                deskripsi: "Celana chino panjang warna earth tone yang elegan dan mudah dipadukan dengan baju apa saja.",
+                spesifikasi: ["Bahan: Cotton Stretch Chino", "Slim Fit Cut", "Saku belakang paspoel"]
+            },
+            "celana-training": {
+                nama: "Celana Training Jogger",
+                harga: "Rp 250.000",
+                kategori: "Apparel",
+                gambar: "../image/celanatrainingp.jpg",
+                deskripsi: "Celana olahraga / santai dengan bahan fleece fleksibel yang memberikan kenyamanan ekstra.",
+                spesifikasi: ["Bahan: Cotton Baby Terry Premium", "Karet pinggang + Tali pengikat", "Saku resleting"]
+            },
+            "celana-training-pendek": {
+                nama: "Celana Training Pendek",
+                harga: "Rp 200.000",
+                kategori: "Apparel",
+                gambar: "../image/celanatrainingpndk.jpg",
+                deskripsi: "Celana pendek olahraga yang ringan dan breathable, pas untuk gym maupun aktivitas santai.",
+                spesifikasi: ["Bahan: Despo Soft Quickdry", "Bobot sangat ringan", "Pinggang elastis"]
+            },
+            "kaos-kaki": {
+                nama: "Kaos Kaki Streetwear",
+                harga: "Rp 50.000",
+                kategori: "Apparel",
+                gambar: "../image/kaosKaki.jpg",
+                deskripsi: "Kaos kaki tinggi dengan bahan katun tebal yang empuk dan menyerap keringat dengan maksimal.",
+                spesifikasi: ["Bahan: Katun Spandex Premium", "Bantalan kaki tebal (Terry Cushion)", "All size dewasa"]
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'topi';
+
+        const produk = databaseProduk[productId] || databaseProduk['topi'];
+
+        document.getElementById('detail-nama').textContent = produk.nama;
+        document.getElementById('detail-harga').textContent = produk.harga;
+        document.getElementById('detail-kategori').textContent = produk.kategori;
+        document.getElementById('detail-img').src = produk.gambar;
+        document.getElementById('detail-img').alt = produk.nama;
+        document.getElementById('detail-deskripsi').textContent = produk.deskripsi;
+
+        const specContainer = document.getElementById('detail-spesifikasi');
+        specContainer.innerHTML = '';
+        produk.spesifikasi.forEach(spec => {
+            const li = document.createElement('li');
+            li.textContent = spec;
+            specContainer.appendChild(li);
+        });
+
+        const waNumber = "6282145866994"; 
+        const pesanWA = `Halo VERTIQ.CO, saya berminat pesan: ${produk.nama} (${produk.harga})`;
+        document.getElementById('btn-wa').href = `https://wa.me/${waNumber}?text=${encodeURIComponent(pesanWA)}`;
+    </script>
+</body>
+</html>
